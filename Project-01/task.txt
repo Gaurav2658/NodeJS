@@ -1,0 +1,11 @@
+REST API
+
+Get /users - List all user 
+
+Get /users/1 -  Get the user with the ID
+Get /users/2 -  Get the user with the ID
+
+POST/users - Create new users
+PATCH/user/1 - Edit the iser with ID 1
+
+DELETE/users/1 - TO DELETE the user with the id 1 
