@@ -6,7 +6,20 @@ const { error } = require("console");
 const PORT = 8000;
 
 app.listen(PORT, () => console.log("Starting the server"))
-app.use(express.urlencoded({extended: false}))
+
+// middle ware - plugins  
+app.use(express.urlencoded({extended: false}));
+
+app.use((req, res, next) => {
+    console.log("its for testing");
+    next();
+})
+
+app.use((req, res, next) => {
+    fs.appendFile("log.txt", `\n${Date.now()}: ${req.ip}: ${req.url}`, (error, data) => {
+        next();
+    })
+})
 
 app.get("/users", (req, res) => {
     const html = 
