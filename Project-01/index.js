@@ -2,7 +2,6 @@ const express = require("express")
 let users = require("./MOCK_DATA.json")
 const app = express();
 const fs = require("fs");
-const { error } = require("console");
 const PORT = 8000;
 
 app.listen(PORT, () => console.log("Starting the server"))
@@ -37,6 +36,7 @@ app.get("/api/users", (req, res) => {
 app.route("/api/users/:id").get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find((user) => user.id == id);
+    if(!user) return res.status(400).json({msg: "User not found"})
     return res.json(user)
 }).patch((req, res) => {
   const id = Number(req.params.id);
