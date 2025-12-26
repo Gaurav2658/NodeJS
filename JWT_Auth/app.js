@@ -5,6 +5,7 @@ const createHttpError = require("http-errors");
 require("dotenv").config()
 const authRoute = require('./routes/auth.route')
 require('./helpers/db')
+const { verifyAccessToken } = require('./helpers/jwtHelper')
 const app = express();
 
 app.use(morgan('dev'))
@@ -12,8 +13,8 @@ app.use(express.json())
 app.use(express.urlencoded(true))
 
 
-app.get('/', async(req, res, next) => {
-    res.send("Hello from express");
+app.get('/', verifyAccessToken, async(req, res, next) => {
+    res.send("Hello cf")
 })
 
 

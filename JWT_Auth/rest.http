@@ -1,9 +1,18 @@
 GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjY3NTUwNjIsImV4cCI6MTc2Njc1NTA3NywiYXVkIjoiNjk0ZTVlNjU5OTU2MDI2MjZlMjE3MWZiIiwiaXNzIjoid2Vib3Ntb3RpYy5jb20ifQ.tsL_Z6fetCzb4rZ4WydrWyJ_uRIkuPbFBOjSJV_gV58
 
 ###
 
 ### login route
 POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+
+{
+  "email": "testxxxxzcxcxcxcxzcxcxxvfdfd12@gmail.com",
+  "password": "test123"
+}
+
 
 ###
 
@@ -12,7 +21,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "email": "test@gmail.com",
+  "email": "testxxxxzcxcxcxcxzcxcxxvfdfd12@gmail.com",
   "password": "test123"
 }
 
